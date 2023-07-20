@@ -1,0 +1,51 @@
+{
+    "manifest_version": 3,
+    "name": "My Extension",
+    "version": "1.0.0",
+    "description": "My Extension for hello world",
+    "author": "himanshu@batra.io",
+    "icons": {
+        "16": "images/icon.png",
+        "48": "images/icon.png",
+        "128": "images/icon.png"
+    },
+    "action": {
+        "default_popup": "popup.html",
+        "default_icon": {
+            "16": "images/icon.png",
+            "48": "images/icon.png",
+            "128": "images/icon.png"
+        },
+        "default_title": "My Amazing Chrome Extension"
+    },
+    "options_page": "options.html",
+    "background": {
+        "service_worker": "background.js"
+    },
+    "permissions": [
+        "activeTab",
+        "tabCapture",
+        "tabs",
+        "storage",
+        "alarms",
+        "contextMenus",
+        "scripting"
+    ],
+    "chrome_url_overrides": {
+        "newtab": "myPage.html"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "<all_urls>"
+            ],
+            "js": [
+                "linkedIn.js",
+                "chatScript.js"
+            ],
+            "css": [
+                "contentStyles.css"
+            ]
+        }
+    ]
+}

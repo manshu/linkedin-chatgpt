@@ -1,0 +1,4 @@
+img,
+video {
+    filter: blur(50px);
+}
