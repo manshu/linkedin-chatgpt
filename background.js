@@ -206,7 +206,9 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
         // console.log(tab.id);
         if (!tab) {
             chrome.tabs.create({ url: 'https://chat.openai.com/' }, function (tab) {
-                chrome.tabs.sendMessage(tab.id, message)
+               setTimeout(() => {
+                 chrome.tabs.sendMessage(tab.id, message)
+               }, 2000);
                 console.log(message);
             })
         } else {
